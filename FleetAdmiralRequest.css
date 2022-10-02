@@ -1,0 +1,98 @@
+/*                        Fernando Diaz Avila's Assignment
+As per Fleet Admiral's Request Launch Program Webpage shall appear User Friendly.
+
+Made a transitioning color background*/
+body{background-image: radial-gradient(rgb(10, 10, 97) 25%, rgb(1, 1, 209) 45%, rgb(22, 22, 72) 60%)}
+/*Made only the header white to contrast the dark blue background*/
+h1{color: white;}
+h3{  /*Here I will change the font to look a little more of a countdown. Than add some colour and a page boarder*/
+    /* I will like to try finding the font that the alarm clocks have to be only for 
+    the time */
+    text-align: center;
+    font: size xx-large;
+    color: red;
+    font-weight: bold;
+    align-content: center;
+    font-family: 'Courier New';
+}
+@font-face{      /*here I downloaded a free font style and created a font family adding it to the font face to change
+                  the countdown to look like a digital clock*/
+  font-family:'digital-clock-font';
+  src: url('Technology.ttf');
+ }
+h2{
+  text-align: center;
+  font: xx-large;
+  color: rgb(249, 46, 46);
+  font-weight: bold;
+  align-content: center;
+  font-family: 'digital-clock-font';
+}
+
+/*Here I added 4 button stlyes the first two being what they appear on screen*/
+/*As its a lunch button I want its appearence to be awarning when its about to be pressed.*/
+  .button1 {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: gray; 
+    color: white; 
+    border: 3px solid gray;
+    box-shadow: 0 3px black;
+  }
+  .button2 {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: gray; 
+    color: white; 
+    border: 3px solid gray;
+    box-shadow: 0 3px black;
+  }
+  /*hover will change the appearence when the users curser hovers over the button.*/
+  .button1:hover {
+    background-color: rgb(253, 247, 118);
+    border:7px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);}
+  .button2:hover {
+    background-color: darkred;
+    border:7px solid red;
+    color: red;}
+    /*active will change the appearence once the button is clicked.*/
+  .button1:active{
+    transform: translateY(4px);
+    box-shadow: 0 3px rgb(0, 0, 0);
+    background-color: yellow;
+    border:7px solid rgb(0, 0, 0);
+    color: black;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;}
+  .button2:active{
+    transform: translateY(4px);
+    box-shadow: 0 3px rgb(0, 0, 0);
+    background-color: red;
+    border:7px solid orangered;
+    color: black;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;}
+
+    /*                <audio id="backgroundsound"></audio>
+        <audio controls>
+            <source src="https://open.spotify.com/track/2ENH05Q7PkilEF6WujXNjG?si=2e042c3431c44e29">
+        </audio> 
+<script>
+    var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 

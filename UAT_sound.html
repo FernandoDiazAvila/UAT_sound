@@ -1,0 +1,108 @@
+<!--                        Fernando Diaz Avila's Assignment
+    What do I need to have?;
+        I need to add sound, and creat the table to display the info required.
+
+    Planning:
+       I will review my notes in looking how to add sound as I remeber learning there is an audio tag, and play audio
+       functions.
+
+    What can I do to improve for next time?
+        I wnat to automatically play once the user logs in can make the site look more
+        of a countdown by adding more elements.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Updated the title.-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UAT Space Program4.0</title> 
+
+        <!--Links the css and JS file to this HTML-->
+        <link rel="stylesheet" href="FleetAdmiralRequest.css">
+        <script src="Efficiency.js"></script> 
+
+        <!--I will reseach if their are different types of borders for my next assognment.-->
+        <h1 style="text-align:center; border: 10px solid #00ffff;">
+            UAT Space Program Launch System </h1>
+            
+        <!--Here I added the login/prompt function.-->
+        <p style="color: whitesmoke;" id="DisplayUserInfo"></p>
+        
+        <Script style="color: white;">//As I couldn't get this to work in JS I put it hear.
+        OpLogin()// I wasn't sure why it needed me to declare the function before defining for it to run.
+    function OpLogin(){
+        var Fname = prompt("What is your First Name?");     //I learned we can assign the user's input to a var.
+        var Lname = prompt("What is your Last Name?");
+        var BadgeNum = prompt("What is your Badge Number?");
+        var UserInfo = "Welcome "+Fname+" "+Lname+ " Badge #"+BadgeNum; //Here I made this variable to limit the amoutn of 
+                                                                        //document.getElementById tags for each var.
+        console.log(UserInfo);
+
+        //I made an if statement for each variabe, and discovered that I can fit more than 1 condition so I can compact 2 if
+        //statements into 1.
+        if(Fname.length>20, Fname.length<1){ //These conditions ensure that there isn't more than 20 char, and at least 1 char.
+            alert("Please Enter a First Name that is not loneger than 20 characters.");
+            var Fname = prompt("What is your First Name?");//If the conditions arent met this displays an alert before
+            console.log(UserInfo);}                        // giving the user the prompt again.
+
+        if(Lname.length>20,Lname.length<1){
+            alert("Please Enter a Last Name that is not loneger than 20 characters.");
+            var Lname = prompt("What is your Last Name?");// so far Im only struggling with updating the user's input into
+            console.log(UserInfo);}                       // the same var.
+
+        if(BadgeNum.length>1000,BadgeNum.length<1){// with this var I have the condition to have at least 3 digits.
+            alert("Please enter a valid Badge Number");
+            var BadgeNum = prompt("What is your Badge Number?");
+            console.log(UserInfo);}
+            
+        else{document.getElementById("DisplayUserInfo").innerHTML = UserInfo;
+            console.log(UserInfo);}// once every condition is met this displays the User's Information.
+}</Script> 
+    <!--I can enxure that the function will keep looping by adding a while loop statment for each if 
+        statment witht the same condition until its met. It worked when there was only while loop statement.
+        So I tried fitting them all into 1 while statement with every condition from each if statement and that didn't do anything
+    -->
+    </head>
+    
+
+    <body style="text-align:center; background-color: #00264d;">
+        <br>
+        <img src="https://synchronic.uat.edu/courses/5371/files/732245/download?wrap=1" width="300px" height="300px">
+        <!--Added a break tag to seperate the button from the UAT logo so that it will appear underneath instead of 
+            being next the logo.-->
+        <br>
+
+
+        <button class="button button1" onclick = "RunCountDown()"> Launch</button>
+
+    
+        <!--<audio autoplay src="https://open.spotify.com/track/2ENH05Q7PkilEF6WujXNjG?si=2e042c3431c44e29"></audio>
+        -->
+        <h2 id= "DisplayCountDown">Click to start Launch</h2>
+        <h3 id="DisplayBlastOff"></h3> 
+
+        <audio id="myAudio"> <!--This audio tag allows me to assign an id and I can source
+        it from my windows media audio file-->
+            <source src="FinalCountdown.mp3" type="audio/mp3"><!--I converted my file from WMA to mp3 as there was no sound when
+                I ran my code.-->
+          </audio>
+          
+<!--These buttons will run the function of playing/pausing the audio and using the file source-->
+          <button onclick="playAudio()" type="button">Play Audio</button>
+          <button onclick="pauseAudio()" type="button">Pause Audio</button> 
+          
+          <script>
+          var x = document.getElementById("myAudio"); 
+          
+          function playAudio() { 
+            x.play(); 
+          } 
+          
+          function pauseAudio() { 
+            x.pause(); 
+          } 
+          </script>
+    </body><!--IT WORKS LETS GOOOOOO!!!!!!-->
+</html>
